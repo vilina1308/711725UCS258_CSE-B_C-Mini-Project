@@ -10,6 +10,8 @@ struct clientData
     char lastName[15];    // account last name
     char firstName[10];   // account first name
     double balance;       // account balance
+    char dob[15];
+    char nominee[30];
 };                        // end structure clientData
 
 // prototypes
@@ -164,6 +166,8 @@ void deleteRecord(FILE *fPtr)
         // replace existing record with blank record
         fwrite(&blankClient, sizeof(struct clientData), 1, fPtr);
     } // end else
+    printf("lastName firstName balance dob nominee\n ");
+    scanf("%14%9s%1f%14s%29s",lastName,firstName,balance,dob,nominee);
 } // end function deleteRecord
 
 // create and insert record
